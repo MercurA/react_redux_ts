@@ -6,9 +6,8 @@ import { handleError } from '../utils/errorHandler';
 import { GET_LIST, IActions } from './actionTypes';
 import { GlobalState } from '.';
 
-export const getUserThunk = (data: IUser[]): ThunkAction<void, GlobalState, () => any, Action<string>> => async (dispatch, getState, api) => {
+export const getUserThunk = (data: IUser[]): ThunkAction<void, GlobalState, () => any, Action<string>> => async (dispatch) => {
     const users = await getUsers();
-    console.log(api())
     dispatch(setUsersToState(users))
 }
 
