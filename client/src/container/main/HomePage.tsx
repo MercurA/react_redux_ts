@@ -20,7 +20,6 @@ interface IHomeState {
 }
 
 class HomePage extends Component<IHomeProps, IHomeState> {
-  
   constructor(props: IHomeProps) {
     super(props);
     this.state = {
@@ -33,7 +32,7 @@ class HomePage extends Component<IHomeProps, IHomeState> {
     };
   }
   public render() {
-    const {no, name, location, age} = this.state.newTitles;
+    const { no, name, location, age } = this.state.newTitles;
     return (
       <div style={{ display: "flex", justifyContent: "center" }}>
         <table>
@@ -56,11 +55,16 @@ class HomePage extends Component<IHomeProps, IHomeState> {
 
     if (users) {
       return users.map(
-        (u: IUser, i: number): JSX.Element => <UserList user={u} index={i} />
+        (u: IUser, i: number): JSX.Element => (
+          <UserList user={u} index={i} getRowData={this.getRow} />
+        )
       );
     } else {
       return void 0;
     }
+  };
+  private getRow = (u: IUser): IUser => {
+    return u;
   };
 }
 

@@ -1,7 +1,14 @@
+interface IUserDetails {
+    phoneNumber: string;
+    email: string;
+}
+
 interface IUser {
-    name: string,
-    location: string,
-    age: number,
+    _id: string;
+    name: string;
+    location: string;
+    age: number;
+    userDetails: IUserDetails;
 }
 
 export default IUser;
