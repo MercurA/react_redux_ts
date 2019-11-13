@@ -18,12 +18,15 @@ class UserList extends Component<IUserListProps, IUserListState> {
     super(props);
     this.state = {
       user: {
+        _id: props.user._id,
         name: props.user.name,
         age: props.user.age,
-        location: props.user.location
+        location: props.user.location,
+        userDetails: props.user.userDetails
       },
     }
   }
+  
   public render() {
     const { index, user } = this.props;
 

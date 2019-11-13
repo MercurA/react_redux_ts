@@ -31,8 +31,10 @@ class HomePage extends Component<IHomeProps, IHomeState> {
       }
     };
   }
+
   public render() {
     const { no, name, location, age } = this.state.newTitles;
+
     return (
       <div style={{ display: "flex", justifyContent: "center" }}>
         <table>
@@ -63,9 +65,11 @@ class HomePage extends Component<IHomeProps, IHomeState> {
       return void 0;
     }
   };
+
   private getRow = (u: IUser): IUser => {
     return u;
   };
+  
 }
 
 export default connect()(HomePage);

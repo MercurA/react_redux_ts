@@ -8,8 +8,6 @@ const rootReducer = combineReducers({
 
 export type GlobalState = ReturnType<typeof rootReducer>;
 
-
-
 export default function configStore() {
     const middlewares = [thunkMiddleware];
     const middlewaresEnchancers = applyMiddleware(...middlewares);
